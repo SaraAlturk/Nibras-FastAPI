@@ -12,9 +12,9 @@ from transformers import Wav2Vec2Processor, Wav2Vec2ForSequenceClassification
 router = APIRouter()
 
 # ————— Configuration ——————————————————————————————————————————
-
-# Path to your fine-tuned model directory
-MODEL_PATH = "/Users/ayaaldoubi/Desktop/nibras_api/model"
+# Path to your fine-tuned model directory (fixed to be relative)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, "saved_model")
 
 # The sampling rate your model expects
 TARGET_SR = 16_000
