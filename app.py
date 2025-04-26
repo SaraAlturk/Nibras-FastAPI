@@ -17,7 +17,9 @@ app.add_middleware(
 )
 
 # Load model and processor once at startup
-saved_dir = "./model"  # your model folder
+#saved_dir = "./model"  # your model folder
+saved_dir = "./saved_model"
+
 processor = Wav2Vec2Processor.from_pretrained(saved_dir)
 model = Wav2Vec2ForSequenceClassification.from_pretrained(saved_dir)
 
