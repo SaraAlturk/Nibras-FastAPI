@@ -13,7 +13,11 @@ router = APIRouter()
 logging.basicConfig(level=logging.INFO)
 
 # --- Load model & processor once at startup ---
-MODEL_PATH = "/Users/ayaaldoubi/Desktop/nibras_api/model"
+#MODEL_PATH = "/Users/ayaaldoubi/Desktop/nibras_api/model"
+# Path to your fine-tuned model directory (fixed to be relative)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, "saved_model")
+
 try:
     processor = Wav2Vec2Processor.from_pretrained(MODEL_PATH)
     model     = Wav2Vec2ForSequenceClassification.from_pretrained(MODEL_PATH)
