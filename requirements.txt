@@ -1,5 +1,9 @@
 fastapi
 uvicorn
+transformers
 torch
 torchaudio
-transformers
+safetensors
+pydub
+python-multipart
+requests
